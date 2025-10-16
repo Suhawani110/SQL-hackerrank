@@ -1,0 +1,16 @@
+-- Select the sum of LAT_N and LONG_W columns from the STATION table
+-- Both values are rounded to 2 decimal places and then explicitly cast 
+-- to a fixed decimal type with two digits after the decimal point.
+
+
+SELECT 
+    -- 1️⃣ SUM(LAT_N): adds up all the values in the LAT_N column
+    -- ROUND(..., 2): rounds the total to 2 decimal places
+    -- CAST(... AS DECIMAL(10,2)): ensures the result is stored and displayed 
+    --with exactly 2 digits after the decimal point 
+    --(even if the last digit is 0)
+    CAST(ROUND(SUM(LAT_N), 2) AS DECIMAL(10,2)) AS Sum_Latitude,
+
+    -- Same logic applies for LONG_W (longitude)
+    CAST(ROUND(SUM(LONG_W), 2) AS DECIMAL(10,2)) AS Sum_Longitude
+FROM STATION;
