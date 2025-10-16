@@ -4,9 +4,9 @@
 
 
 SELECT 
-    -- 1️⃣ SUM(LAT_N): adds up all the values in the LAT_N column
+    -- SUM(LAT_N): adds up all the values in the LAT_N column
     -- ROUND(..., 2): rounds the total to 2 decimal places
-    -- CAST(... AS DECIMAL(10,2)): ensures the result is stored and displayed 
+    -- CAST(... AS DECIMAL(10,2)): ensures the result is stored and displayed(for showing result upto 2 decimal places we do cast)
     --with exactly 2 digits after the decimal point 
     --(even if the last digit is 0)
     CAST(ROUND(SUM(LAT_N), 2) AS DECIMAL(10,2)) AS Sum_Latitude,
